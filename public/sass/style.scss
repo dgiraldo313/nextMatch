@@ -1,5 +1,67 @@
 body{
+  color: #444;
   h1{
-    background-color: violet;
+    &.page-title{
+      padding-top: 50px;
+      font-size: 64px;
+    }
+  }
+  .match-board{ //containers all content in jumbotron
+    max-width: 1080px;
+    background-color: #ccc;
+    padding-left: 30px!important;
+    padding-right: 30px!important;
+    // padding-bottom: 30px!important;
+    .section-container{
+
+      .board-section{//target the three boxes inside the jumbotron
+        //only targets 1st and 3rd section
+        &.team-info-container{
+          img.team-crest{
+            width: 280px;
+            height: 280px;
+          }
+          .team-name{
+            padding-top: 20px;
+            font-weight: bold;
+            font-size: 1.5em;
+          }
+        }
+        &.match-details{
+          margin-top: 20px;
+          .versus{
+            font-size: 4em;
+          }
+          .event-date-details{
+            padding-top: 20px;
+            padding-bottom: 10px;
+            .date,
+            .time{
+              display: block;
+              font-weight: bold;
+            }
+          }
+          .live{
+            width: 100px;
+            border: 4px solid green;
+            border-radius: 5px;
+            color: green;
+            font-size: 1.2em;
+            line-height: 30px;
+          }
+          .competition{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+          }
+          .score{
+            font-size: 4em;
+            font-weight: bold;
+          }
+        }
+      }
+
+    }
   }
 }

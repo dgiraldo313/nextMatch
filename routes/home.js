@@ -12,7 +12,8 @@ var teamID = "81";
 router.get('/', function(req, res, next) {
   nextMatch.get(teamID).then((matchDetails)=>{
     // console.dir(matchDetails);
-    res.json(matchDetails);
+    res.render('index', {'match': matchDetails});
+    // res.json(matchDetails);
   });
 
 });

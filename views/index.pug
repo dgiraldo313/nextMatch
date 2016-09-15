@@ -1,5 +1,29 @@
 extends layout
 
 block content
-  h1 Next Game
-  p Welcome to your favorite website on the whole wide world!
+  .container
+    .content-main
+      h1.text-center.page-title Match Details
+      .jumbotron.center-block.match-board
+        .container.section-container
+          .col-xs-4.board-section.team-info-container.home-team-info
+            img#homeTeamCrest.team-crest.center-block(src=match.homeTeamData.crestUrl )
+            .team-name.text-center #{match.homeTeamName}
+          .col-xs-4.board-section.match-details.text-center
+            .versus  VS
+            if match.status === 'IN_PLAY'
+                .live.center-block LIVE
+            else
+                .event-date-details
+                  date.date #{match.date}
+                  time.time #{match.date}
+
+            .competition #{match.competition.caption}
+            if match.status === 'IN_PLAY'
+              .score #{match.result.goalsHomeTeam} : #{match.result.goalsAwayTeam}
+            else
+              .btn.btn-default.schedule-event Add to Calendar
+
+          .col-xs-4.board-section.team-info-container.away-team-info
+            img#awayTeamCrest.team-crest.center-block(src=match.awayTeamData.crestUrl )
+            .team-name.text-center #{match.awayTeamName}
