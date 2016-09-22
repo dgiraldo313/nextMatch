@@ -1,4 +1,5 @@
 var matchSpecs = require('./footballData.js');
+var moment = require('moment');
 
 //call getNextMatch() -> returns first game listed with status of inplay or scheduled
 //once promise is fulfilled
@@ -8,6 +9,7 @@ function getNextMatch(teamID){
   var fixturesPath = '/v1/teams/' + teamID + '/fixtures';
   // Make initial requests to get list of all fixtures
   return matchSpecs.getJSON(fixturesPath).then(helper.findNextGame)
+                              .then(helper.formatDate)
                               .then(getHomeTeamData)
                               .then(getAwayTeamData)
                               .then(getCompetition);
@@ -80,10 +82,24 @@ var helper= {
                       }
                     }
                   })
+                  // add formatted date and time
+                  // this.formatDate(nextGame.)
+                  // helper.formatDate(date);
                   return nextGame;
                 },
+  formatDate: (fixture)=>{
+                // get local fomatted date
+                var date = moment.utc(fixture.date).local();
+                var formattedDate = date.format("MMM Do, YYYY");
+                var formattedTime = date.format("h:mm A");
 
-    // itererate through all fixtures and return as soon as it find a status of inplay or scheduled
+                // add formatted date and time to JSON object
+                fixture.date = formattedDate.toString();
+                fixture.time = formattedTime.toString();
+                // console.log(fixture);
+                return fixture;
+            },
+
   }
 
 

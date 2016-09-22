@@ -11,12 +11,12 @@ block content
             .team-name.text-center #{match.homeTeamName}
           .col-xs-4.board-section.match-details.text-center
             .versus  VS
-            if match.status === 'IN_PLAY'
+            if match.status === ''
                 .live.center-block LIVE
             else
                 .event-date-details
                   date.date #{match.date}
-                  time.time #{match.date}
+                  time.time #{match.time}
 
             .competition #{match.competition.caption}
             if match.status === 'IN_PLAY'

@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-// var nextMatch = require("../models/nextMatch.js");
+var nextMatch = require("../models/nextMatch.js");
 
 // next match funtion offline
-var nextMatch = require("../models/nextMatchOffline.js");
+// var nextMatch = require("../models/nextMatchOffline.js");
 
 // FC Barcelona
 var teamID = "81";
