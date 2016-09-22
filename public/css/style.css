@@ -1,2 +1,44 @@
-body h1 {
-  background-color: violet; }
+body {
+  color: #444; }
+  body h1.page-title {
+    padding-top: 50px;
+    font-size: 64px; }
+  body .match-board {
+    max-width: 1080px;
+    background-color: #ccc;
+    padding-left: 30px !important;
+    padding-right: 30px !important; }
+    body .match-board .section-container .board-section.team-info-container img.team-crest {
+      width: 280px;
+      height: 280px; }
+    body .match-board .section-container .board-section.team-info-container .team-name {
+      padding-top: 20px;
+      font-weight: bold;
+      font-size: 1.5em; }
+    body .match-board .section-container .board-section.match-details {
+      margin-top: 20px; }
+      body .match-board .section-container .board-section.match-details .versus {
+        font-size: 4em; }
+      body .match-board .section-container .board-section.match-details .event-date-details {
+        padding-top: 20px;
+        padding-bottom: 10px; }
+        body .match-board .section-container .board-section.match-details .event-date-details .date,
+        body .match-board .section-container .board-section.match-details .event-date-details .time {
+          display: block;
+          font-weight: bold; }
+      body .match-board .section-container .board-section.match-details .live {
+        width: 100px;
+        border: 2px solid green;
+        opacity: .6;
+        border-radius: 5px;
+        color: green;
+        font-size: 1.2em;
+        line-height: 30px; }
+      body .match-board .section-container .board-section.match-details .competition {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 1.2em;
+        font-weight: bold; }
+      body .match-board .section-container .board-section.match-details .score {
+        font-size: 4em;
+        font-weight: bold; }
