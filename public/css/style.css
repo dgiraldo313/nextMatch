@@ -1,44 +1,158 @@
+@keyframes slideUp {
+  0% {
+    bottom: -200px;
+    opacity: 0; }
+  100% {
+    bottom: 0px;
+    opacity: 1; } }
+
+@keyframes slideDown {
+  0% {
+    top: -200px;
+    opacity: 0; }
+  100% {
+    top: 0px;
+    opacity: 1; } }
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0px); }
+  50% {
+    transform: translateY(-10px); }
+  100% {
+    transform: translateY(0px); } }
+
+@keyframes leftRight {
+  0% {
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(5px); }
+  100% {
+    transform: translateX(0px); } }
+
 body {
-  color: #444; }
-  body h1.page-title {
-    padding-top: 50px;
-    font-size: 64px; }
-  body .match-board {
-    max-width: 1080px;
-    background-color: #ccc;
-    padding-left: 30px !important;
-    padding-right: 30px !important; }
-    body .match-board .section-container .board-section.team-info-container img.team-crest {
-      width: 280px;
-      height: 280px; }
-    body .match-board .section-container .board-section.team-info-container .team-name {
+  color: #1a1a1a; }
+  body .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+    opacity: .2;
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -2; }
+    body .background-image#index_image {
+      background-image: url("/static/images/background_home2-min.jpeg"); }
+    body .background-image#match_image {
+      background-image: url("/static/images/scoreboard_background1-min.jpeg"); }
+  body .content-main {
+    margin-top: 50px; }
+
+#match-view .page-title {
+  padding-top: 50px;
+  font-size: 64px; }
+
+#match-view .match-board {
+  max-width: 1080px;
+  background-color: rgba(93, 93, 93, 0.7);
+  padding-left: 30px !important;
+  padding-right: 30px !important; }
+  #match-view .match-board .section-container .board-section.team-info-container img.team-crest {
+    width: 280px;
+    height: 280px; }
+  #match-view .match-board .section-container .board-section.team-info-container .team-name {
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 1.5em; }
+  #match-view .match-board .section-container .board-section.match-details {
+    margin-top: 20px; }
+    #match-view .match-board .section-container .board-section.match-details .versus {
+      font-size: 4em; }
+    #match-view .match-board .section-container .board-section.match-details .event-date-details {
       padding-top: 20px;
-      font-weight: bold;
-      font-size: 1.5em; }
-    body .match-board .section-container .board-section.match-details {
-      margin-top: 20px; }
-      body .match-board .section-container .board-section.match-details .versus {
-        font-size: 4em; }
-      body .match-board .section-container .board-section.match-details .event-date-details {
-        padding-top: 20px;
-        padding-bottom: 10px; }
-        body .match-board .section-container .board-section.match-details .event-date-details .date,
-        body .match-board .section-container .board-section.match-details .event-date-details .time {
-          display: block;
-          font-weight: bold; }
-      body .match-board .section-container .board-section.match-details .live {
-        width: 100px;
-        border: 2px solid green;
-        opacity: .6;
-        border-radius: 5px;
-        color: green;
-        font-size: 1.2em;
-        line-height: 30px; }
-      body .match-board .section-container .board-section.match-details .competition {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        font-size: 1.2em;
+      padding-bottom: 10px; }
+      #match-view .match-board .section-container .board-section.match-details .event-date-details .date,
+      #match-view .match-board .section-container .board-section.match-details .event-date-details .time {
+        display: block;
         font-weight: bold; }
-      body .match-board .section-container .board-section.match-details .score {
-        font-size: 4em;
-        font-weight: bold; }
+    #match-view .match-board .section-container .board-section.match-details .live {
+      width: 100px;
+      border: 2px solid green;
+      opacity: .6;
+      border-radius: 5px;
+      color: green;
+      font-size: 1.2em;
+      line-height: 30px; }
+    #match-view .match-board .section-container .board-section.match-details .competition {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-size: 1.2em;
+      font-weight: bold; }
+    #match-view .match-board .section-container .board-section.match-details .score {
+      font-size: 4em;
+      font-weight: bold; }
+
+#index-view #logo {
+  position: relative;
+  top: -600px;
+  width: 300px;
+  height: 300px;
+  animation: slideDown .6s .5s forwards; }
+
+#index-view form {
+  padding-top: 50px;
+  max-width: 980px; }
+  #index-view form #primary-list,
+  #index-view form #secondary-list {
+    position: relative;
+    bottom: -600px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px; }
+    #index-view form #primary-list span,
+    #index-view form #secondary-list span {
+      font-size: 3em; }
+    #index-view form #primary-list select,
+    #index-view form #secondary-list select {
+      position: relative;
+      top: -10px;
+      background-color: transparent;
+      font-size: 2em;
+      margin-left: 10px;
+      padding-left: 5px;
+      width: 300px;
+      background: url("/static/images/icons/arrow_down.svg") no-repeat 100% 50%;
+      border: none;
+      border-radius: 0px;
+      border-bottom: 1px solid black;
+      -webkit-appearance: button;
+      -moz-appearance: button;
+      appearance: button; }
+      #index-view form #primary-list select:focus,
+      #index-view form #secondary-list select:focus {
+        outline: none; }
+  #index-view form #primary-list {
+    animation: slideUp .6s .5s forwards; }
+  #index-view form #secondary-list {
+    animation: slideUp .6s 0s forwards; }
+
+#index-view input[type=submit] {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: none;
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+  background-color: transparent;
+  border: 2px solid #1a1a1a;
+  border-radius: 50%;
+  background: url("/static/images/icons/arrow_right.svg") no-repeat 100% 50%;
+  animation: leftRight .5s .3s infinite; }
+  #index-view input[type=submit]:hover {
+    background-color: #fff; }

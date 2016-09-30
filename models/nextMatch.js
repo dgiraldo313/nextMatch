@@ -75,7 +75,7 @@ var helper= {
                   var nextGame;
 
                   fixtures.forEach((game)=>{
-                    if(game.status !== "FINISHED"){
+                    if(game.status !== "FINISHED" && game.matchday > 0){
                       while(!gameFound){
                         nextGame = game;
                         gameFound = true;
