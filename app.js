@@ -8,8 +8,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var home = require('./routes/home');
-// var users = require('./routes/users');
+var index = require('./routes/index');
+var match = require('./routes/match');
 
 var app = express();
 
@@ -31,9 +31,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /*********** Routes ****************/
 //home route
-app.use('/', home);
+app.use('/', index);
 //future functionality to find next match depending on team
-// app.use('/:teamName', team);
+app.use('/', match);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,29 +1,165 @@
 extends layout
 
 block content
+  .background-image#index_image
   .container
-    .content-main
-      h1.text-center.page-title Match Details
-      .jumbotron.center-block.match-board
-        .container.section-container
-          .col-xs-4.board-section.team-info-container.home-team-info
-            img#homeTeamCrest.team-crest.center-block(src=match.homeTeamData.crestUrl )
-            .team-name.text-center #{match.homeTeamName}
-          .col-xs-4.board-section.match-details.text-center
-            .versus  VS
-            if match.status === ''
-                .live.center-block LIVE
-            else
-                .event-date-details
-                  date.date #{match.date}
-                  time.time #{match.time}
+    .content-main#index-view
+      img#logo.center-block(src="/static/images/nextMatch_logo.png" alt="Next Match Logo")
 
-            .competition #{match.competition.caption}
-            if match.status === 'IN_PLAY'
-              .score #{match.result.goalsHomeTeam} : #{match.result.goalsAwayTeam}
-            else
-              .btn.btn-default.schedule-event Add to Calendar
-
-          .col-xs-4.board-section.team-info-container.away-team-info
-            img#awayTeamCrest.team-crest.center-block(src=match.awayTeamData.crestUrl )
-            .team-name.text-center #{match.awayTeamName}
+      form.center-block#form(action="/" name="form" method="POST")
+        div#primary-list.center-block.up-down
+          span Pick a league
+          select(name="leagues" id="leagues")
+            option(value='0')
+            option(value='1') Bundesliga
+            option(value='2') Eredivisie
+            option(value='3') Ligue 1
+            option(value='4') Premiere League
+            option(value='5') Primeira Liga
+            option(value='6') Primera Division
+            option(value='7') Serie A
+        div#secondary-list.hidden.center-block
+          span View next match for
+          select(name="teams" id="teams")
+            option(value='1' data-value="")
+            option(value='1' data-value="1") 1. FC Köln
+            option(value='1' data-value="15") 1. FSV Mainz 05
+            option(value='1' data-value="3") Bayer Leverkusen
+            option(value='1' data-value="18") Bor. Mönchengladbach
+            option(value='1' data-value="4") Borussia Dortmund
+            option(value='1' data-value="19") Eintracht Frankfurt
+            option(value='1' data-value="16") FC Augsburg
+            option(value='1' data-value="5") FC Bayern München
+            option(value='1' data-value="31") FC Ingolstadt 04
+            option(value='1' data-value="6") FC Schalke 04
+            option(value='1' data-value="7") Hamburger SV
+            option(value='1' data-value="9") Hertha BSC
+            option(value='1' data-value="721") Red Bull Leipzig
+            option(value='1' data-value="17") SC Freiburg
+            option(value='1' data-value="55") SV Darmstadt 98
+            option(value='1' data-value="2") TSG 1899 Hoffenheim
+            option(value='1' data-value="11") VfL Wolfsburg
+            option(value='1' data-value="12") Werder Bremen
+            option(value='2' data-value="")
+            option(value='2' data-value="680") ADO Den Haag
+            option(value='2' data-value="678") Ajax Amsterdam
+            option(value='2' data-value="682") AZ Alkmaar
+            option(value='2' data-value="670") Excelsior
+            option(value='2' data-value="677") FC Groningen
+            option(value='2' data-value="666") FC Twente Enschede
+            option(value='2' data-value="676") FC Utrecht
+            option(value='2' data-value="675") Feyenoord Rotterdam
+            option(value='2' data-value="718") Go Ahead Eagles Deventer
+            option(value='2' data-value="671") Heracles Almelo
+            option(value='2' data-value="667") NEC Nijmegen
+            option(value='2' data-value="684") PEC Zwolle
+            option(value='2' data-value="674") PSV Eindhoven
+            option(value='2' data-value="665") Roda JC Kerkrade
+            option(value='2' data-value="673") SC Heerenveen
+            option(value='2' data-value="1085") Sparta Rotterdam
+            option(value='2' data-value="679") Vitesse Arnhem
+            option(value='2' data-value="672") Willem II Tilburg
+            option(value='3' data-value="")
+            option(value='3' data-value="532") Angers SCO
+            option(value='3' data-value="548") AS Monaco FC
+            option(value='3' data-value="520") AS Nancy
+            option(value='3' data-value="527") AS Saint-Étienne
+            option(value='3' data-value="528") Dijon FCO
+            option(value='3' data-value="538") EA Guingamp
+            option(value='3' data-value="526") FC Girondins de Bordeaux
+            option(value='3' data-value="525") FC Lorient
+            option(value='3' data-value="545") FC Metz
+            option(value='3' data-value="543") FC Nantes
+            option(value='3' data-value="518") Montpellier Hérault SC
+            option(value='3' data-value="522") OGC Nice
+            option(value='3' data-value="516") Olympique de Marseille
+            option(value='3' data-value="523") Olympique Lyonnais
+            option(value='3' data-value="521") OSC Lille
+            option(value='3' data-value="524") Paris Saint-Germain
+            option(value='3' data-value="536") SC Bastia
+            option(value='3' data-value="514") SM Caen
+            option(value='3' data-value="529") Stade Rennais FC
+            option(value='3' data-value="511") Toulouse FC
+            option(value='4' data-value="")
+            option(value='4' data-value="1044") AFC Bournemouth
+            option(value='4' data-value="57") Arsenal FC
+            option(value='4' data-value="328") Burnley FC
+            option(value='4' data-value="61") Chelsea FC
+            option(value='4' data-value="354") Crystal Palace FC
+            option(value='4' data-value="62") Everton FC
+            option(value='4' data-value="322") Hull City FC
+            option(value='4' data-value="338") Leicester City FC
+            option(value='4' data-value="64") Liverpool FC
+            option(value='4' data-value="65") Manchester City FC
+            option(value='4' data-value="66") Manchester United FC
+            option(value='4' data-value="343") Middlesbrough FC
+            option(value='4' data-value="340") Southampton FC
+            option(value='4' data-value="70") Stoke City FC
+            option(value='4' data-value="71") Sunderland AFC
+            option(value='4' data-value="72") Swansea City FC
+            option(value='4' data-value="73") Tottenham Hotspur FC
+            option(value='4' data-value="346") Watford FC
+            option(value='4' data-value="74") West Bromwich Albion FC
+            option(value='4' data-value="563") West Ham United FC
+            option(value='5' data-value="")
+            option(value='5' data-value="810") Boavista Porto FC
+            option(value='5' data-value="711") C.F. Os Belenenses
+            option(value='5' data-value="1049") CD Tondela
+            option(value='5' data-value="712") FC Arouca
+            option(value='5' data-value="507") FC Paços de Ferreira
+            option(value='5' data-value="503") FC Porto
+            option(value='5' data-value="496") FC Rio Ave
+            option(value='5' data-value="500") Feirense
+            option(value='5' data-value="1103") G.D. Chaves
+            option(value='5' data-value="582") GD Estoril Praia
+            option(value='5' data-value="504") Maritimo Funchal
+            option(value='5' data-value="583") Moreirense FC
+            option(value='5' data-value="501") Nacional Funchal
+            option(value='5' data-value="495") SL Benfica
+            option(value='5' data-value="497") Sporting Braga
+            option(value='5' data-value="498") Sporting CP
+            option(value='5' data-value="502") Vitoria Guimaraes
+            option(value='5' data-value="506") Vitoria Setubal
+            option(value='6' data-value="")
+            option(value='6' data-value="77") Athletic Club
+            option(value='6' data-value="79") CA Osasuna
+            option(value='6' data-value="745") CD Leganes
+            option(value='6' data-value="78") Club Atlético de Madrid
+            option(value='6' data-value="263") Deportivo Alavés
+            option(value='6' data-value="81") FC Barcelona
+            option(value='6' data-value="83") Granada CF
+            option(value='6' data-value="84") Málaga CF
+            option(value='6' data-value="558") RC Celta de Vigo
+            option(value='6' data-value="79") RC Deportivo La Coruna 560
+            option(value='6' data-value="80") RCD Espanyol
+            option(value='6' data-value="90") Real Betis
+            option(value='6' data-value="86") Real Madrid CF
+            option(value='6' data-value="92") Real Sociedad de Fútbol
+            option(value='6' data-value="278") SD Eibar
+            option(value='6' data-value="559") Sevilla FC
+            option(value='6' data-value="96") Sporting Gijón
+            option(value='6' data-value="275") UD Las Palmas
+            option(value='6' data-value="95") Valencia CF
+            option(value='6' data-value="94") Villarreal CF
+            option(value='7' data-value="")
+            option(value='7' data-value="106") AC Chievo Verona
+            option(value='7' data-value="98") AC Milan
+            option(value='7' data-value="99") ACF Fiorentina
+            option(value='7' data-value="100") AS Roma
+            option(value='7' data-value="102") Atalanta BC
+            option(value='7' data-value="103") Bologna FC
+            option(value='7' data-value="104") Cagliari Calcio
+            option(value='7' data-value="445") Empoli FC
+            option(value='7' data-value="472") FC Crotone
+            option(value='7' data-value="108") FC Internazionale Milano
+            option(value='7' data-value="107") Genoa CFC
+            option(value='7' data-value="109") Juventus Turin
+            option(value='7' data-value="585") Pescara Calcio
+            option(value='7' data-value="110") SS Lazio
+            option(value='7' data-value="113") SSC Napoli
+            option(value='7' data-value="586") Torino FC
+            option(value='7' data-value="584") UC Sampdoria
+            option(value='7' data-value="115") Udinese Calcio
+            option(value='7' data-value="114") US Cittá di Palermo
+            option(value='7' data-value="471") US Sassuolo Calcio
+            input(type="submit" value="" class="button" disabled="disabled")

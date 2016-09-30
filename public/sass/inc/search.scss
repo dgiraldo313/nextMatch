@@ -1,0 +1,75 @@
+#index-view{
+  #logo{
+    position: relative;
+    top: -600px;
+    width: 300px;
+    height: 300px;
+    animation: slideDown .6s .5s forwards;
+  }
+  form{
+      padding-top: 50px;
+      max-width: 980px;
+      #primary-list,
+      #secondary-list{
+        position: relative;
+        bottom: -600px;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        // font-size: 3em;
+        span{
+          font-size: 3em;
+        }
+        select{
+          position: relative;
+          top: -10px;
+          background-color: transparent;
+          font-size: 2em;
+          margin-left: 10px;
+          padding-left: 5px;
+          width: 300px;
+          background: url("/static/images/icons/arrow_down.svg") no-repeat 100% 50%;
+          border: none;
+          border-radius: 0px;
+          border-bottom: 1px solid black;
+          -webkit-appearance: button;
+          -moz-appearance: button;
+          appearance: button;
+          &:focus{
+            outline: none;
+            // background-image: none;
+          }
+
+        }
+
+      }
+      #primary-list{
+        animation: slideUp .6s .5s forwards;
+      }
+      #secondary-list{
+        animation: slideUp .6s 0s forwards;
+      }
+
+
+  }
+  input[type=submit]{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    background-color: transparent;
+    border: 2px solid #1a1a1a;
+    border-radius: 50%;
+    background: url("/static/images/icons/arrow_right.svg") no-repeat 100% 50%;
+    animation: leftRight .5s .3s infinite;
+
+    &:hover{
+      background-color: #fff;
+    }
+
+  }
+
+}

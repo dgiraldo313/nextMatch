@@ -1,0 +1,22 @@
+body {
+  color: #1a1a1a; }
+  body .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+    opacity: .2;
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -2; }
+    body .background-image#index_image {
+      background-image: url("/static/images/background_home2-min.jpeg"); }
+    body .background-image#match_image {
+      background-image: url("/static/images/scoreboard_background1-min.jpeg"); }
+  body .content-main {
+    margin-top: 50px; }

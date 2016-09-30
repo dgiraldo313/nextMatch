@@ -1,0 +1,35 @@
+// includes all the styles that apply to layout
+body{
+  color: #1a1a1a;
+  h1{
+
+  }
+  //background images
+  .background-image{
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+    opacity: .2;
+    background:no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -2;
+
+
+    &#index_image{
+      background-image: url("/static/images/background_home2-min.jpeg");
+
+    }
+    &#match_image{
+     background-image: url("/static/images/scoreboard_background1-min.jpeg");
+    }
+  }
+  .content-main{
+    margin-top: 50px;
+  }
+}
