@@ -1,43 +1,119 @@
-#match-view .page-title {
-  padding-top: 50px;
-  font-size: 64px; }
+#match-view .logo-container {
+  width: 400px;
+  display: block;
+  height: 100px;
+  margin: auto;
+  margin-bottom: 20px;
+  color: #1a1a1a; }
+  #match-view .logo-container .logo-name {
+    display: inline-block;
+    font-size: 4em;
+    line-height: 100px;
+    margin-left: 20px;
+    transform: translateY(-30px); }
+  #match-view .logo-container .logo-image {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: url("/static/images/nextMatch_logo_small.png") no-repeat 100% 100%; }
 
 #match-view .match-board {
-  max-width: 1080px;
+  max-width: 840px;
   background-color: rgba(93, 93, 93, 0.7);
-  padding-left: 30px !important;
-  padding-right: 30px !important; }
-  #match-view .match-board .section-container .board-section.team-info-container img.team-crest {
-    width: 280px;
-    height: 280px; }
-  #match-view .match-board .section-container .board-section.team-info-container .team-name {
-    padding-top: 20px;
-    font-weight: bold;
-    font-size: 1.5em; }
-  #match-view .match-board .section-container .board-section.match-details {
-    margin-top: 20px; }
-    #match-view .match-board .section-container .board-section.match-details .versus {
-      font-size: 4em; }
-    #match-view .match-board .section-container .board-section.match-details .event-date-details {
-      padding-top: 20px;
-      padding-bottom: 10px; }
-      #match-view .match-board .section-container .board-section.match-details .event-date-details .date,
-      #match-view .match-board .section-container .board-section.match-details .event-date-details .time {
-        display: block;
-        font-weight: bold; }
-    #match-view .match-board .section-container .board-section.match-details .live {
-      width: 100px;
-      border: 2px solid green;
-      opacity: .6;
-      border-radius: 5px;
-      color: green;
-      font-size: 1.2em;
-      line-height: 30px; }
-    #match-view .match-board .section-container .board-section.match-details .competition {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      font-size: 1.2em;
-      font-weight: bold; }
-    #match-view .match-board .section-container .board-section.match-details .score {
-      font-size: 4em;
-      font-weight: bold; }
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  margin-bottom: 0px; }
+  #match-view .match-board .section-header {
+    background-color: #000;
+    height: 50px;
+    border-radius: 6px 6px 0px 0px;
+    padding-left: 40px; }
+    #match-view .match-board .section-header p {
+      color: #fff;
+      line-height: 50px; }
+  #match-view .match-board .section-container {
+    padding-top: 40px;
+    padding-bottom: 40px; }
+    #match-view .match-board .section-container .board-section {
+      display: inline-block; }
+      #match-view .match-board .section-container .board-section.match-details {
+        width: 20%; }
+      #match-view .match-board .section-container .board-section.team-info-container {
+        width: 40%; }
+        #match-view .match-board .section-container .board-section.team-info-container.home-team-info {
+          float: left; }
+        #match-view .match-board .section-container .board-section.team-info-container.away-team-info {
+          float: right; }
+        #match-view .match-board .section-container .board-section.team-info-container img.team-crest {
+          width: 250px;
+          height: 250px; }
+        #match-view .match-board .section-container .board-section.team-info-container .team-name {
+          padding-top: 20px;
+          font-weight: bold;
+          font-size: 1.5em; }
+      #match-view .match-board .section-container .board-section.home-team-info {
+        position: relative;
+        left: -600px;
+        animation: slideLeft .6s .5s forwards; }
+      #match-view .match-board .section-container .board-section.away-team-info {
+        position: relative;
+        right: -600px;
+        animation: slideRight .6s .5s forwards; }
+      #match-view .match-board .section-container .board-section.match-details {
+        margin-top: 20px; }
+        #match-view .match-board .section-container .board-section.match-details .event-date-details {
+          padding-top: 40px;
+          padding-bottom: 10px;
+          font-size: 1.5em; }
+          #match-view .match-board .section-container .board-section.match-details .event-date-details .date,
+          #match-view .match-board .section-container .board-section.match-details .event-date-details .time {
+            display: block;
+            font-weight: bold; }
+        #match-view .match-board .section-container .board-section.match-details .live {
+          width: 100px;
+          border: 2px solid green;
+          opacity: .6;
+          border-radius: 5px;
+          color: green;
+          font-size: 1.2em;
+          line-height: 30px; }
+        #match-view .match-board .section-container .board-section.match-details .competition {
+          padding-top: 20px;
+          padding-bottom: 20px;
+          font-size: 1.2em;
+          font-weight: bold; }
+        #match-view .match-board .section-container .board-section.match-details .score {
+          font-size: 4em;
+          font-weight: bold; }
+
+#match-view .versus-container {
+  width: 65%;
+  height: 50px;
+  margin: auto;
+  background-color: #000;
+  border-radius: 0 0 6px 6px; }
+  #match-view .versus-container .home-team,
+  #match-view .versus-container .away-team {
+    width: 45%;
+    height: 50px;
+    display: inline-block;
+    color: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 50px;
+    font-size: 1.5em;
+    text-align: center; }
+  #match-view .versus-container .versus {
+    width: 10%;
+    height: 50px;
+    background-color: #fff;
+    display: inline-block;
+    font-size: 50px;
+    line-height: 50px;
+    text-align: center; }
+  #match-view .versus-container .home-team {
+    float: left; }
+  #match-view .versus-container .away-team {
+    float: right; }

@@ -1,22 +1,68 @@
 #match-view{
-  .page-title{
-    padding-top: 50px;
-    font-size: 64px;
+  .logo-container{
+    width: 400px;
+    display: block;
+    height: 100px;
+    margin: auto;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    .logo-name{
+      display: inline-block;
+      font-size: 4em;
+      line-height: 100px;
+      margin-left: 20px;
+      transform: translateY(-30px);
+    }
+    .logo-image{
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background: url('/static/images/nextMatch_logo_small.png') no-repeat 100% 100% ;
+    }
   }
+
   .match-board{ //containers all content in jumbotron
-    max-width: 1080px;
+    max-width: 840px;
     background-color: rgba(93,93,93, .7);
-    padding-left: 30px!important;
-    padding-right: 30px!important;
-    // padding-bottom: 30px!important;
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
+    margin-bottom: 0px;
+    .section-header{
+      background-color: #000;
+      height: 50px;
+      border-radius: 6px 6px 0px 0px;
+      // margin-bottom: 20px;
+      padding-left: 40px;
+      p{
+        color: #fff;
+        line-height: 50px;
+
+      }
+    }
     .section-container{
+      padding-top: 40px;
+      padding-bottom: 40px;
 
       .board-section{//target the three boxes inside the jumbotron
         //only targets 1st and 3rd section
+        display: inline-block;
+        &.match-details{
+          width: 20%;
+        }
         &.team-info-container{
+          width: 40%;
+          &.home-team-info{
+            float: left;
+          }
+          &.away-team-info{
+            float: right;
+          }
+
           img.team-crest{
-            width: 280px;
-            height: 280px;
+            width: 250px;
+            height: 250px;
           }
           .team-name{
             padding-top: 20px;
@@ -24,14 +70,22 @@
             font-size: 1.5em;
           }
         }
+        &.home-team-info{
+          position: relative;
+          left: -600px;
+          animation: slideLeft .6s .5s forwards;
+        }
+        &.away-team-info{
+          position: relative;
+          right: -600px;
+          animation: slideRight .6s .5s forwards;
+        }
         &.match-details{
           margin-top: 20px;
-          .versus{
-            font-size: 4em;
-          }
           .event-date-details{
-            padding-top: 20px;
+            padding-top: 40px;
             padding-bottom: 10px;
+            font-size: 1.5em;
             .date,
             .time{
               display: block;
@@ -60,6 +114,40 @@
         }
       }
 
+    }
+  }
+  .versus-container{
+    width: 65%;
+    height: 50px;
+    margin: auto;
+    background-color: #000;
+    border-radius: 0 0 6px 6px;
+    .home-team,
+    .away-team{
+      width: 45%;
+      height: 50px;
+      display: inline-block;
+      color: #fff;
+      padding-left: 10px;
+      padding-right: 10px;
+      line-height: 50px;
+      font-size: 1.5em;
+      text-align: center;
+    }
+    .versus{
+      width: 10%;
+      height: 50px;
+      background-color: #fff;
+      display: inline-block;
+      font-size: 50px;
+      line-height: 50px;
+      text-align: center;
+    }
+    .home-team{
+      float: left;
+    }
+    .away-team{
+      float: right;
     }
   }
 }
