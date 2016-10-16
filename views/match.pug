@@ -4,14 +4,16 @@ block content
   .background-image#match_image
   .container
     .content-main#match-view
-      h1.text-center.page-title Match Details
+      a(href="/").logo-container
+        .logo-image
+        .logo-name NextMatch
       .jumbotron.center-block.match-board
+        .section-header
+          p #{match.competition.caption}
         .container.section-container
-          .col-xs-4.board-section.team-info-container.home-team-info
+          .board-section.team-info-container.home-team-info
             img#homeTeamCrest.team-crest.center-block(src=match.homeTeamData.crestUrl )
-            .team-name.text-center #{match.homeTeamName}
-          .col-xs-4.board-section.match-details.text-center
-            .versus  VS
+          .board-section.match-details.text-center
             if match.status === 'IN_PLAY'
                 .live.center-block LIVE
             else
@@ -19,12 +21,14 @@ block content
                   date.date #{match.date}
                   time.time #{match.time}
 
-            .competition #{match.competition.caption}
             if match.status === 'IN_PLAY'
               .score #{match.result.goalsHomeTeam} : #{match.result.goalsAwayTeam}
             else
-              .btn.btn-default.schedule-event Add to Calendar
+              .btn.btn-default.schedule-event Remind Me
 
-          .col-xs-4.board-section.team-info-container.away-team-info
+          .board-section.team-info-container.away-team-info
             img#awayTeamCrest.team-crest.center-block(src=match.awayTeamData.crestUrl )
-            .team-name.text-center #{match.awayTeamName}
+      .versus-container
+        .home-team #{match.homeTeamName}
+        .versus V
+        .away-team #{match.awayTeamName}
