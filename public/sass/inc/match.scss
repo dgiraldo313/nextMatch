@@ -88,8 +88,12 @@
             padding-top: 40px;
             padding-bottom: 10px;
             font-size: 1.5em;
-            .date,
-            .time{
+            #unformattedDate{
+              visibility: hidden;
+              height: 0px;
+            }
+            #date,
+            #time{
               display: block;
               font-weight: bold;
             }

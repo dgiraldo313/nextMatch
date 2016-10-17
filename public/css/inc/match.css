@@ -69,8 +69,11 @@
           padding-top: 40px;
           padding-bottom: 10px;
           font-size: 1.5em; }
-          #match-view .match-board .section-container .board-section.match-details .event-date-details .date,
-          #match-view .match-board .section-container .board-section.match-details .event-date-details .time {
+          #match-view .match-board .section-container .board-section.match-details .event-date-details #unformattedDate {
+            visibility: hidden;
+            height: 0px; }
+          #match-view .match-board .section-container .board-section.match-details .event-date-details #date,
+          #match-view .match-board .section-container .board-section.match-details .event-date-details #time {
             display: block;
             font-weight: bold; }
         #match-view .match-board .section-container .board-section.match-details .live {

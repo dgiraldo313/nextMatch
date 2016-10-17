@@ -94,7 +94,7 @@ var helper= {
                 var formattedTime = date.format("h:mm A");
 
                 // add formatted date and time to JSON object
-                fixture.date = formattedDate.toString();
+                fixture.formattedDate = formattedDate.toString();
                 fixture.time = formattedTime.toString();
                 // console.log(fixture);
                 return fixture;

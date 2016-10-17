@@ -18,8 +18,9 @@ block content
                 .live.center-block LIVE
             else
                 .event-date-details
-                  date.date #{match.date}
-                  time.time #{match.time}
+                  #unformattedDate #{match.date}
+                  date#date #{match.formattedDate}
+                  time#time #{match.time}
 
             if match.status === 'IN_PLAY'
               .score #{match.result.goalsHomeTeam} : #{match.result.goalsAwayTeam}
