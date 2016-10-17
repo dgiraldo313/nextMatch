@@ -113,9 +113,9 @@ body {
     #match-view .match-board .section-container .board-section {
       display: inline-block; }
       #match-view .match-board .section-container .board-section.match-details {
-        width: 20%; }
+        width: 25%; }
       #match-view .match-board .section-container .board-section.team-info-container {
-        width: 40%; }
+        width: 37.5%; }
         #match-view .match-board .section-container .board-section.team-info-container.home-team-info {
           float: left; }
         #match-view .match-board .section-container .board-section.team-info-container.away-team-info {
@@ -138,8 +138,8 @@ body {
       #match-view .match-board .section-container .board-section.match-details {
         margin-top: 20px; }
         #match-view .match-board .section-container .board-section.match-details .event-date-details {
-          padding-top: 40px;
-          padding-bottom: 10px;
+          padding-top: 25px;
+          padding-bottom: 5px;
           font-size: 1.5em; }
           #match-view .match-board .section-container .board-section.match-details .event-date-details #unformattedDate {
             visibility: hidden;
@@ -164,6 +164,61 @@ body {
         #match-view .match-board .section-container .board-section.match-details .score {
           font-size: 4em;
           font-weight: bold; }
+        #match-view .match-board .section-container .board-section.match-details #reminder-section {
+          background-color: #fff;
+          border-radius: 5px;
+          color: #444; }
+          #match-view .match-board .section-container .board-section.match-details #reminder-section p {
+            font-size: 1em;
+            font-weight: 100;
+            padding-top: 10px;
+            margin-bottom: 0px; }
+          #match-view .match-board .section-container .board-section.match-details #reminder-section #reminder-button {
+            cursor: pointer;
+            font-weight: bold; }
+          #match-view .match-board .section-container .board-section.match-details #reminder-section #reminder-form {
+            display: none; }
+            #match-view .match-board .section-container .board-section.match-details #reminder-section #reminder-form i {
+              cursor: pointer;
+              position: relative;
+              top: -5px;
+              right: -90px;
+              font-size: 1.5em;
+              color: #5e5e5e;
+              padding: 3px 4px;
+              z-index: 1; }
+            #match-view .match-board .section-container .board-section.match-details #reminder-section #reminder-form form {
+              position: relative;
+              top: -15px; }
+              #match-view .match-board .section-container .board-section.match-details #reminder-section #reminder-form form input[type="tel"] {
+                background-color: transparent;
+                border: none;
+                font-weight: bold;
+                text-align: center;
+                border-bottom: 2px solid #1a1a1a; }
+                #match-view .match-board .section-container .board-section.match-details #reminder-section #reminder-form form input[type="tel"]:focus {
+                  outline: none; }
+              #match-view .match-board .section-container .board-section.match-details #reminder-section #reminder-form form .notice {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-size: 1em; }
+                #match-view .match-board .section-container .board-section.match-details #reminder-section #reminder-form form .notice select#alertTime {
+                  background-color: transparent;
+                  border: none;
+                  width: 40px;
+                  font-weight: bold; }
+                  #match-view .match-board .section-container .board-section.match-details #reminder-section #reminder-form form .notice select#alertTime:focus {
+                    outline: none; }
+              #match-view .match-board .section-container .board-section.match-details #reminder-section #reminder-form form #submit {
+                font-weight: bold;
+                cursor: pointer;
+                transition: linear .5s all;
+                border: none;
+                border-bottom: 1px solid transparent;
+                background-color: transparent;
+                padding: 0px; }
+                #match-view .match-board .section-container .board-section.match-details #reminder-section #reminder-form form #submit:hover {
+                  border-bottom: 1px solid #000; }
 
 #match-view .versus-container {
   width: 65%;
@@ -171,8 +226,8 @@ body {
   margin: auto;
   background-color: #000;
   border-radius: 0 0 6px 6px; }
-  #match-view .versus-container .home-team,
-  #match-view .versus-container .away-team {
+  #match-view .versus-container #home-team,
+  #match-view .versus-container #away-team {
     width: 45%;
     height: 50px;
     display: inline-block;
@@ -190,9 +245,9 @@ body {
     font-size: 50px;
     line-height: 50px;
     text-align: center; }
-  #match-view .versus-container .home-team {
+  #match-view .versus-container #home-team {
     float: left; }
-  #match-view .versus-container .away-team {
+  #match-view .versus-container #away-team {
     float: right; }
 
 #index-view {

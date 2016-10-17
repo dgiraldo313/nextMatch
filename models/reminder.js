@@ -10,6 +10,12 @@ var ReminderSchema = new mongoose.Schema({
 
 });
 
+// method to check and see which entries need to be notified to user
+ReminderSchema.methods.needsAlert = function (date) {
+  return Math.round(moment.duration(moment(this.time).tz(this.timeZone).utc()
+                          .diff(moment(date).utc())
+                        ).asMinutes()) === this.notification;
+};
 
 
 var Reminder = mongoose.model('reminder', ReminderSchema);
