@@ -23,10 +23,8 @@ function getNextMatch(teamID){
 
 function getHomeTeamData(gameInfo){
   var homeTeamPath = helper.cleanLink(gameInfo._links.homeTeam);
-  // console.log(homeTeamPath);
   return matchSpecs.getJSON(homeTeamPath).then((homeTeamInfo)=>{
     gameInfo["homeTeamData"] = homeTeamInfo;
-    // console.log(gameInfo);
     return gameInfo;
   });
 }
@@ -37,10 +35,8 @@ function getHomeTeamData(gameInfo){
                             //returns
 function getAwayTeamData(gameInfo){
   var awayTeamPath = helper.cleanLink(gameInfo._links.awayTeam);
-  // console.log(homeTeamPath);
   return matchSpecs.getJSON(awayTeamPath).then((awayTeamInfo)=>{
     gameInfo["awayTeamData"] = awayTeamInfo;
-    // console.log(gameInfo);
     return gameInfo;
   });
 }
@@ -52,10 +48,8 @@ function getAwayTeamData(gameInfo){
                             //returns
 function getCompetition(gameInfo){
   var competitionPath = helper.cleanLink(gameInfo._links.competition);
-  // console.log(homeTeamPath);
   return matchSpecs.getJSON(competitionPath).then((competition)=>{
     gameInfo["competition"] = competition;
-    // console.log(gameInfo);
     return gameInfo;
   });
 }
@@ -96,7 +90,6 @@ var helper= {
                 // add formatted date and time to JSON object
                 fixture.formattedDate = formattedDate.toString();
                 fixture.time = formattedTime.toString();
-                // console.log(fixture);
                 return fixture;
             },
 

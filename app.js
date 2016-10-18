@@ -12,6 +12,8 @@ var index = require('./routes/index');
 var match = require('./routes/match');
 var reminder = require('./routes/reminder');
 
+var scheduler = require('./scheduler');
+
 var app = express();
 
 //setting up static path for public folder
@@ -71,5 +73,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
+scheduler.start();
 
 module.exports = app;
