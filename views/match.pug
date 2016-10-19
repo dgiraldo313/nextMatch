@@ -18,17 +18,34 @@ block content
                 .live.center-block LIVE
             else
                 .event-date-details
-                  date.date #{match.date}
-                  time.time #{match.time}
+                  #unformattedDate #{match.date}
+                  date#date #{match.formattedDate}
+                  time#time #{match.time}
 
             if match.status === 'IN_PLAY'
               .score #{match.result.goalsHomeTeam} : #{match.result.goalsAwayTeam}
             else
-              .btn.btn-default.schedule-event Remind Me
+              #reminder-section
+                #reminder-button Remind Me
+                #reminder-form
+                  i.fa.fa-times#close-button
+                  form(method='POST')
+                    input#phoneNumber(type="tel" name="usrtel" placeholder="Enter Phone Number" required pattern='\d{10}')
+                    .notice
+                      span Text me a reminder
+                      select(name="mins" id="alertTime")
+                        option(value='15') 15
+                        option(value='30') 30
+                        option(value='45') 45
+                      span mins before the event starts
+                    input#submit(type="submit" value="Remind Me!")
+
 
           .board-section.team-info-container.away-team-info
             img#awayTeamCrest.team-crest.center-block(src=match.awayTeamData.crestUrl )
       .versus-container
-        .home-team #{match.homeTeamName}
+        #home-team #{match.homeTeamName}
         .versus V
-        .away-team #{match.awayTeamName}
+        #away-team #{match.awayTeamName}
+block scripts
+  script(src="/static/javascripts/reminder.js")

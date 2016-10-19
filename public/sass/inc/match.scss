@@ -51,10 +51,10 @@
         //only targets 1st and 3rd section
         display: inline-block;
         &.match-details{
-          width: 20%;
+          width: 25%;
         }
         &.team-info-container{
-          width: 40%;
+          width: 37.5%;
           &.home-team-info{
             float: left;
           }
@@ -85,21 +85,26 @@
         &.match-details{
           margin-top: 20px;
           .event-date-details{
-            padding-top: 40px;
-            padding-bottom: 10px;
+            padding-top: 25px;
+            padding-bottom: 5px;
             font-size: 1.5em;
-            .date,
-            .time{
+            #unformattedDate{
+              visibility: hidden;
+              height: 0px;
+            }
+            #date,
+            #time{
               display: block;
               font-weight: bold;
             }
           }
           .live{
             width: 100px;
-            border: 2px solid green;
+            border: 2px solid #00CC00;
+            background-color: #00a300;
             opacity: .6;
             border-radius: 5px;
-            color: green;
+            color: #fff;
             font-size: 1.2em;
             line-height: 30px;
           }
@@ -113,9 +118,84 @@
             font-size: 4em;
             font-weight: bold;
           }
+          #reminder-section{
+            background-color: #fff;
+            // border: .5px solid #000;
+            border-radius: 5px;
+            color: #444;
+            p{
+              font-size: 1em;
+              font-weight: 100;
+              padding-top: 10px;
+              margin-bottom: 0px;
+            }
+            #reminder-button{
+              cursor: pointer;
+              font-weight: bold;
+
+
+            }
+            #reminder-form{
+              display: none;
+              i{
+                cursor: pointer;
+                position: relative;
+                top: -5px;
+                right: -90px;
+                font-size: 1.5em;
+                color: #5e5e5e;
+                padding: 3px 4px;
+                z-index: 1;
+              }
+              form{
+                position: relative;
+                top: -15px;
+                input[type="tel"] {
+                  background-color: transparent;
+                  border: none;
+                  // color: #1a1a1a;
+                  font-weight: bold;
+                  text-align: center;
+                  border-bottom: 2px solid #1a1a1a;
+                  &:focus{
+                    outline: none;
+                  }
+                }
+                 .notice{
+                   margin-top: 10px;
+                   margin-bottom: 10px;
+                   font-size: 1em;
+                   select#alertTime {
+                      background-color: transparent;
+                      border: none;
+                      width: 40px;
+                      font-weight: bold;
+                      &:focus{
+                        outline: none;
+                      }
+
+                    }
+
+                 }
+                 #submit{
+                   font-weight: bold;
+                   cursor: pointer;
+                   transition: linear .5s all;
+                   border: none;
+                   border-bottom: 1px solid transparent;
+                   background-color: transparent;
+                   padding: 0px;
+                   &:hover{
+                     border-bottom: 1px solid #000;
+
+                   }
+                 }
+               }
+
+            }
+          }
         }
       }
-
     }
   }
   .versus-container{
@@ -124,8 +204,8 @@
     margin: auto;
     background-color: #000;
     border-radius: 0 0 6px 6px;
-    .home-team,
-    .away-team{
+    #home-team,
+    #away-team{
       width: 45%;
       height: 50px;
       display: inline-block;
@@ -145,10 +225,10 @@
       line-height: 50px;
       text-align: center;
     }
-    .home-team{
+    #home-team{
       float: left;
     }
-    .away-team{
+    #away-team{
       float: right;
     }
   }

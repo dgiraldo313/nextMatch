@@ -22,7 +22,6 @@
       #index-view form #primary-list select,
       #index-view form #secondary-list select {
         position: relative;
-        top: -10px;
         background-color: transparent;
         font-size: 2em;
         margin-left: 10px;

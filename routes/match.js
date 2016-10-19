@@ -16,9 +16,7 @@ router.post('/:id', function(req, res, next) {
 /* GET request sent by url. */
 router.get('/:id', function(req, res, next) {
   var teamID = req.params.id;
-  console.log(teamID);
   nextMatch.get(teamID).then((matchDetails)=>{
-    console.log(req.params.id);
     res.render('match', {'match': matchDetails});
   });
 });

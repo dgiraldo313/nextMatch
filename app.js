@@ -10,6 +10,9 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var match = require('./routes/match');
+var reminder = require('./routes/reminder');
+
+var scheduler = require('./scheduler');
 
 var app = express();
 
@@ -32,8 +35,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 /*********** Routes ****************/
 //home route
 app.use('/', index);
-//future functionality to find next match depending on team
+// match route
 app.use('/', match);
+// reminder route
+app.use('/', reminder);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -66,5 +73,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
+scheduler.start();
 
 module.exports = app;
