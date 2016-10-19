@@ -150,10 +150,11 @@ body {
             font-weight: bold; }
         #match-view .match-board .section-container .board-section.match-details .live {
           width: 100px;
-          border: 2px solid green;
+          border: 2px solid #00CC00;
+          background-color: #00a300;
           opacity: .6;
           border-radius: 5px;
-          color: green;
+          color: #fff;
           font-size: 1.2em;
           line-height: 30px; }
         #match-view .match-board .section-container .board-section.match-details .competition {
@@ -274,7 +275,6 @@ body {
       #index-view form #primary-list select,
       #index-view form #secondary-list select {
         position: relative;
-        top: -10px;
         background-color: transparent;
         font-size: 2em;
         margin-left: 10px;
