@@ -256,11 +256,17 @@ body {
   #index-view #logo {
     position: relative;
     top: -600px;
-    width: 300px;
-    height: 300px;
     animation: slideDown .6s .5s forwards; }
+    #index-view #logo img {
+      width: 300px;
+      height: 300px; }
+    #index-view #logo .logo-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4em;
+      font-weight: 900;
+      text-align: center; }
   #index-view form {
-    padding-top: 50px;
+    padding-top: 20px;
     max-width: 980px; }
     #index-view form #primary-list,
     #index-view form #secondary-list {
